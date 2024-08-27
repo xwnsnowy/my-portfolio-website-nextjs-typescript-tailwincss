@@ -2,7 +2,6 @@
 import Stairs from "@/components/Stairs";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 const StairTransition = () => {
   const pathname = usePathname();
