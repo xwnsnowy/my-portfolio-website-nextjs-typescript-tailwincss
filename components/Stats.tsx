@@ -9,20 +9,20 @@ interface statItem {
 
 const stats: statItem[] = [
   { num: 2, text: "Year of experience" },
-  { num: 10, text: "Projects completed" },
-  { num: 8, text: "Technologies mastered" },
   { num: 500, text: "Code commits" },
+  { num: 8, text: "Technologies mastered" },
+  { num: 10, text: "Projects completed" },
 ];
 
 const Stats = () => {
   return (
-    <div>
+    <div className="pt-4 pb-12 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-6 mx-auto xl:max-w-none xl:grid-cols-4">
           {stats.map((item, index) => (
             <div
               key={item.text}
-              className="flex flex-1 gap-4 justify-center items-center xl:justify-start "
+              className="flex flex-1 gap-4 justify-center items-center xl:justify-start"
             >
               <div>
                 <CountUp

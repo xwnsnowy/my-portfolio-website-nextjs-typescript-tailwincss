@@ -29,7 +29,7 @@ const MobileNav = () => {
       <SheetContent className="flex flex-col">
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
-            Tien Thanh<span className="text-accent">.</span>
+            Tiến Thành<span className="text-accent">.</span>
           </Link>
         </div>
         <nav className="flex flex-col justify-center items-center gap-8">
