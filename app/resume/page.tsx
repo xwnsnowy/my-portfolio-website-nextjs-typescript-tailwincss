@@ -23,10 +23,71 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { IconType } from "react-icons/lib";
+
+interface Info {
+  fieldName: string;
+  fieldValue: string;
+}
+
+interface About {
+  title: string;
+  description: string;
+  info: Info[];
+}
+
+interface ExperienceItem {
+  company: string;
+  position: string;
+  duration: string;
+}
+
+interface Experience {
+  icon: string;
+  title: string;
+  description: string;
+  items: ExperienceItem[];
+}
+
+interface EducationItem {
+  institution: string;
+  degree: string;
+  duration: string;
+}
+
+interface Education {
+  icon: string;
+  title: string;
+  description: string;
+  items: EducationItem[];
+}
+
+interface EducationItem {
+  institution: string;
+  degree: string;
+  duration: string;
+}
+
+interface Education {
+  icon: string;
+  title: string;
+  description: string;
+  items: EducationItem[];
+}
+
+interface SkillItem {
+  icon: IconType;
+  name: string;
+}
+
+interface Skill {
+  title: string;
+  description: string;
+  skillList: SkillItem[];
+}
 
 //about data
-const about = {
+const about: About = {
   title: "About me",
   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   info: [
@@ -62,7 +123,7 @@ const about = {
 };
 
 //experience data
-const experience = {
+const experience: Experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -101,7 +162,7 @@ const experience = {
 };
 
 //education data
-const education = {
+const education: Education = {
   icon: "/assets/resume/badge.svg",
   title: "My education",
   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -140,18 +201,18 @@ const education = {
 };
 
 //skills data
-const skills = {
+const skills: Skill = {
   title: "My skills",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   skillList: [
-    { icon: <FaHtml5 />, name: "html 5" },
-    { icon: <FaCss3 />, name: "css 3" },
-    { icon: <FaJs />, name: "javascript" },
-    { icon: <FaReact />, name: "react.js" },
-    { icon: <SiNextdotjs />, name: "next.js" },
-    { icon: <SiTailwindcss />, name: "tailwind.css" },
-    { icon: <FaNodeJs />, name: "node.js" },
-    { icon: <FaFigma />, name: "figma" },
+    { icon: FaHtml5, name: "html 5" },
+    { icon: FaCss3, name: "css 3" },
+    { icon: FaJs, name: "javascript" },
+    { icon: FaReact, name: "react.js" },
+    { icon: SiNextdotjs, name: "next.js" },
+    { icon: SiTailwindcss, name: "tailwind.css" },
+    { icon: FaNodeJs, name: "node.js" },
+    { icon: FaFigma, name: "figma" },
   ],
 };
 
@@ -248,7 +309,7 @@ const Resume = () => {
                         <Tooltip>
                           <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                             <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                              {skill.icon}
+                              <skill.icon />
                             </div>
                           </TooltipTrigger>
                           <TooltipContent className="capitalize">
