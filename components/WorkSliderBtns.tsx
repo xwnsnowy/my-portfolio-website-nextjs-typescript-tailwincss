@@ -21,14 +21,14 @@ const WorkSliderBtns: React.FC<WorkSliderBtnsProps> = ({
       <Button
         className={btnStyles}
         onClick={() => swiper.slidePrev()}
-        title="abc"
+        title="left button"
       >
         <PiCaretLeftBold className={iconStyles} />
       </Button>
       <Button
         className={btnStyles}
         onClick={() => swiper.slideNext()}
-        title="abc"
+        title="right button"
       >
         <PiCaretRightBold className={iconStyles} />
       </Button>

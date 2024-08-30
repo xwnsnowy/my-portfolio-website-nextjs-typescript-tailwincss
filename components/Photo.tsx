@@ -16,14 +16,14 @@ const Photo = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.1, duration: 0.7, ease: "easeInOut" }}
         >
-          <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-normal absolute">
+          <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-normal absolute group">
             <Image
               src="/assets/home-img.png"
               priority
               quality={100}
               fill
               alt=""
-              className="object-contain"
+              className="object-contain transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:cursor-pointer"
             />
           </div>
         </motion.div>

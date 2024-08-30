@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/effect-cards";
+import { EffectCards } from "swiper/modules";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
@@ -83,7 +85,7 @@ const Work = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+        <div className="flex flex-col xl:flex-row xl:gap-[50px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] ">
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
@@ -128,13 +130,14 @@ const Work = () => {
           </div>
           <div className="w-full xl:w-[50%]">
             <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
+              effect={"cards"}
+              grabCursor={true}
+              modules={[EffectCards]}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (
-                <SwiperSlide key={project.title} className="w-full">
+                <SwiperSlide key={project.title}>
                   <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                     {/* overlay */}
                     <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
@@ -151,11 +154,11 @@ const Work = () => {
                 </SwiperSlide>
               ))}
               {/* slider buttons */}
-              <WorkSliderBtns
+              {/* <WorkSliderBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                 btnStyles="bg-accent hover:bg-accent-hover text-primary text-base"
                 iconStyles=""
-              />
+              /> */}
             </Swiper>
           </div>
         </div>
